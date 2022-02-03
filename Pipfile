@@ -1,0 +1,12 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pygqlc = "==2.0.4"
+numpy = "==1.21.3"
+xlsxwriter = "==3.0.2"
+
+[requires]
+python_version = "3.8"
