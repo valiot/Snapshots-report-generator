@@ -3,7 +3,7 @@ from ...modules import queries as q
 from datetime import datetime, timedelta
 
 
-def rm_report(date):
+def pp_report(date):
     print()
     print("Beginning Burner Damper report generation")
     print()
@@ -51,7 +51,7 @@ def rm_report(date):
                         pump_pressure_nn.append(y["value"])
             
             # Generate Excel Workbook
-            workbook = xlsxwriter.Workbook('Reporte Apertura Compuerta Quemador.xlsx')
+            workbook = xlsxwriter.Workbook('Reporte Presion de Bomba.xlsx')
             worksheet = workbook.add_worksheet('Bloque 2')
             
             # Cell formatting
@@ -59,8 +59,8 @@ def rm_report(date):
             cell_format = workbook.add_format({'align': 'center', 'bold': False, 'border': 2})
             
             # Adding information to cells
-            worksheet.merge_range('B1', 'Variables', cell_format)
-            worksheet.merge_range('C1', 'Setpoints', cell_format)
+            worksheet.write('B1', 'Variables', cell_format)
+            worksheet.write('C1', 'Setpoints', cell_format)
             worksheet.merge_range('E1:F1', 'Controladores', merge_format)
             worksheet.write('D1', 'Estado Actual', cell_format)
             worksheet.write('A2', 'Fecha', cell_format)

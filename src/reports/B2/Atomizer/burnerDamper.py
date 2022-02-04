@@ -3,7 +3,7 @@ from ...modules import queries as q
 from datetime import datetime, timedelta
 
 
-def rm_report(date):
+def bd_report(date):
     print()
     print("Beginning Burner Damper report generation")
     print()
